@@ -11,6 +11,11 @@ void dots_brack(int dot, int brack)
     {
         printf("#");
     }
+    printf("  ");
+    for (int k = 0; k < brack; k++)
+    {
+        printf("#");
+    }
     printf("\n");
 }
 
@@ -28,5 +33,4 @@ int main(void)
     }
     return 0;
 }
-
 
