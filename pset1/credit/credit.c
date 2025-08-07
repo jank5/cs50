@@ -6,7 +6,7 @@ int main(void)
 {
     int sum, result, sum_check;
     string x = get_string("Number: ");
-    //long x = get_long("Number: ");
+    // long x = get_long("Number: ");
     int length = strlen(x);
     for (int i = 2; i <= length; i+=2)
     {
@@ -37,7 +37,7 @@ int main(void)
         sum_check += output;
     }
     */
-    int sum_numb; 
+    int sum_numb;
     if (result % 10 == 0)
     {
         if (strncmp(x,"4",1) == 0)
@@ -52,8 +52,7 @@ int main(void)
         {
             printf("MASTERCARD\n");
         }
-        
-    } 
+    }
     else
     {
         printf("INVALID\n");
