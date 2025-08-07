@@ -30,13 +30,6 @@ int main(void)
         sum = output;
         result += sum;
     }
-    /*
-    for (int z = 0; z < 2; z++) // get first two numbers cards
-    {
-        int output = x[z] - '0';
-        sum_check += output;
-    }
-    */
     int sum_numb;
     if (result % 10 == 0)
     {
