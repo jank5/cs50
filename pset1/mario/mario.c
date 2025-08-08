@@ -1,18 +1,7 @@
 #include <stdio.h>
 #include "../../lib/cs50.h"
 
-void dots_brack(int dot, int brack)
-{
-    for (int i = 1; i < dot;i++)
-    {
-        printf(" ");
-    }
-    for (int j = 0; j < brack; j++)
-    {
-        printf("#");
-    }
-    printf("\n");
-}
+void dots_brack(int dot, int brack);
 
 int main(void)
 {
@@ -29,4 +18,15 @@ int main(void)
     return 0;
 }
 
-
+void dots_brack(int dot, int brack)
+{
+    for (int i = 1; i < dot;i++)
+    {
+        printf(" ");
+    }
+    for (int j = 0; j < brack; j++)
+    {
+        printf("#");
+    }
+    printf("\n");
+}

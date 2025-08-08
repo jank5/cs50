@@ -6,7 +6,6 @@ int main(void)
 {
     int sum, result, sum_check;
     string x = get_string("Number: ");
-    // long x = get_long("Number: ");
     int length = strlen(x);
     for (int i = 2; i <= length; i+=2)
     {
@@ -21,8 +20,6 @@ int main(void)
         } else {
             result += sum;
         }
-        // Я уже получаю число 13, дальше мне нужно сложить то, на что я не умножал на 2.
-        // Number for check: 4003600000000014
     }
     for (int j = 1; j <= length; j+=2)
     {
