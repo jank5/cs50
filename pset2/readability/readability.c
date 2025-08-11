@@ -15,10 +15,10 @@ int main(void)
     float result_words = words(read);
     float result_sentence = sentence(read);
 
-    float l = result_letters / result_words;
-    float s = result_sentence / result_words;
+    float l = result_letters * 100 / result_words;
+    float s = result_sentence * 100 / result_words;
 
-    float index = 0.0588  l - 0.296  s - 15.8;
+    float index = 0.0588 *  l - 0.296 *  s - 15.8;
     printf("%f\n", index);
     return 0;
 }
