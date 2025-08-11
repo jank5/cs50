@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <ctype.h>
 #include <string.h>
 #include "../cs50.h"
 
