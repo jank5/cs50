@@ -7,7 +7,7 @@
 float letters(string read);
 float words(string read);
 float sentence(string read);
-string check_grade(int avg_num);
+void check_grade(float avg_num);
 
 int main(void)
 {
@@ -20,7 +20,7 @@ int main(void)
     float s = result_sentence * 100 / result_words;
 
     float index = 0.0588 *  l - 0.296 *  s - 15.8;
-    printf("%f\n", index);
+    check_grade(index);
     return 0;
 }
 
@@ -66,9 +66,9 @@ float sentence(string read)
     return score;
 }
 
-string check_grade(int avg_num)
+void check_grade(float avg_num)
 {
-    float result = round(avg_num);
+    int result = round(avg_num);
     if (avg_num < 1)
     {
         printf("Before Grade 1\n");
@@ -79,6 +79,6 @@ string check_grade(int avg_num)
     }
     else
     {
-        printf("Grade %f\n", result);
+        printf("Grade %d\n", result);
     }
 }
