@@ -20,19 +20,19 @@ int main(int argc, string argv[])
     int number;
     if (argc > 2 || argc == 1)
     {
-        printf("Usage: ./caesar key\n");
+        printf("Usage: %s key\n", argv[0]);
         return 1;
     }
     int check = only_digits(arg);
     if (check != 0)
     {
-        printf("Usage: ./caesar key\n");
+        printf("Usage: %s key\n", argv[0]);
         return 1;
     }
     else
     {
         number = reverse(arg);
-        output = get_string("plaintext: ");
+        output = get_string("plaintext:  ");
     }
     int length = strlen(output);
     char result_string[length-1];
