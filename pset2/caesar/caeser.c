@@ -21,16 +21,18 @@ int main(int argc, string argv[])
     if (argc > 2 || argc == 1)
     {
         printf("Usage: ./caesar key\n");
+        return 1;
     }
     int check = only_digits(arg);
     if (check != 0)
     {
         printf("Usage: ./caesar key\n");
+        return 1;
     }
     else
     {
         number = reverse(arg);
-        output = get_string("plaintext:  ");
+        output = get_string("plaintext: ");
     }
     int length = strlen(output);
     char result_string[length-1];
@@ -40,7 +42,7 @@ int main(int argc, string argv[])
         result_string[i] = new_output;
     }
     result_string[length] = '\0';
-    printf("ciphertext: %s\n",result_string);
+    printf("ciphertext: %s",result_string);
 
 
     return 0;
@@ -67,7 +69,7 @@ int only_digits(string s)
 int reverse(string s)
 {
 	int result = atoi(s);
-    	return result;
+    return result;
 }
 
 char rotate(char c, int n)
