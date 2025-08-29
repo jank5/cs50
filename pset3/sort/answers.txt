@@ -1,0 +1,13 @@
+English is not my native language.
+
+sort1 uses: bubble sort 
+
+How do you know?: because in the reversed file, the contents that start from the largest to the smallest get an output in the form of a large number at the end, therefore this is a bubble sort.
+
+sort2 uses: selection sort
+
+How do you know?: due to the fact that the execution time of the files varies. In the random, reversed, sorted 10000 numbers files, the execution of sort2 was faster than sort3, therefore selection sorting is used. After all, sort3 uses a complex algorithm of action that takes a lot of time. Especially if you sort using a file sorted50000.txt there i see fast output then sort3.
+
+sort3 uses: merge sort
+
+How do you know?: the explanation is in sort2.
