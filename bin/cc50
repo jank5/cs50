@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cc -o $1 $2 /home/zemo/Workspace/C/cs50.c && ./$1
+# Скачивание файла
+#wget -q https://raw.githubusercontent.com/cs50/libcs50/main/src/cs50.h
+#wget -q https://raw.githubusercontent.com/cs50/libcs50/main/src/cs50.c

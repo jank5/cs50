@@ -1,0 +1,1 @@
+alias runC=gcc -o runoff runoff.c /home/zemo/Workspace/C/cs50.c -lm

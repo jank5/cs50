@@ -1,5 +1,7 @@
-#include <cs50.h>
+#include "../cs50.h"
 #include <stdio.h>
+#include <string.h>
+#include <math.h>
 
 // Max voters and candidates
 #define MAX_VOTERS 100
@@ -126,29 +128,64 @@ int main(int argc, string argv[])
 // Record preference if vote is valid
 bool vote(int voter, int rank, string name)
 {
-    // TODO
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (strcmp(name,candidates[i].name) == 0)
+        {
+            preferences[voter][rank] = i;
+            return true;
+        }
+    }
     return false;
 }
 
 // Tabulate votes for non-eliminated candidates
 void tabulate(void)
 {
-    // TODO
-    return;
+    // Я не уверен насчёт правильности интерации т.к. здесь проверка так происходит prefrences[01234][всегда 0]
+    // И получается что preferences[ОК][Здесь уже проблемы, т.к. в будущем надо не только 0, но и 1,2 ранги]
+    for (int i = 0; i < voter_count; i++)
+    {
+        for (int j = 0; j < candidate_count; j++)
+        {
+            int who_is = preferences[i][j];
+            if (candidates[who_is].eliminated != true)
+            {
+                candidates[who_is].votes += 1;
+                break;
+            }
+        }
+    }
 }
 
 // Print the winner of the election, if there is one
 bool print_winner(void)
 {
-    // TODO
+    // Перед компиляцией нужно добавить флаг -lm чтобы компиляция была успешна. Вчера тестирование провалился из-за того, что я не добавил к gcc флаг -lm.
+    int need_votes = round((double)voter_count / 2.0) + 1.0;
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (need_votes == candidates[i].votes)
+        {
+            printf("%s\n", candidates[i].name);
+            return true;
+        }
+    }
     return false;
 }
 
 // Return the minimum number of votes any remaining candidate has
 int find_min(void)
 {
-    // TODO
-    return 0;
+    int min = candidates[0].votes;
+    for (int i = 1; i < candidate_count; i++)
+    {
+        if (min > candidates[i].votes)
+        {
+            min = candidates[i].votes;
+        }
+    }
+    return min;
 }
 
 // Return true if the election is tied between all candidates, false otherwise
@@ -161,6 +198,12 @@ bool is_tie(int min)
 // Eliminate the candidate (or candidates) in last place
 void eliminate(int min)
 {
-    // TODO
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (min == candidates[i].votes)
+        {
+            candidates[i].eliminated = true;
+        }
+    }
     return;
 }
